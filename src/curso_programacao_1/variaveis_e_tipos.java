@@ -22,12 +22,12 @@ public class variaveis_e_tipos {
 		
 		// valor verdade = boolean
 		
-		byte teste = 4;
-		byte teste_2= 2;
+		double teste = 5.2;
+		float teste_2= 2;
 		float div;
 		
-		div = (teste/teste_2);
-		System.out.println(div);
+		div = (float) (teste/teste_2);
+		System.out.printf("%.1f\n",div);
 	}
 
 }
