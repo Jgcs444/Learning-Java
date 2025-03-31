@@ -8,6 +8,7 @@ public class Condicional_Ternaria {
 		
 		//Sintaxe
 		
+		// ? é um operador ternário usado para tomar decisões curtas e rápidas;
 		//( condição ) ? valor_se_verdadeiro : valor_se_falso
 
 		//Ex:
@@ -17,7 +18,7 @@ public class Condicional_Ternaria {
 			double preco = 34.5;
 			double desc = (preco < 10) ? preco*0.05:preco*0.2;
 			
-			System.out.printf("O valor total é: R$ %.2f",desc );
+			System.out.printf("O valor total é: R$ %.2f",desc) ;
 		
 	}
 
