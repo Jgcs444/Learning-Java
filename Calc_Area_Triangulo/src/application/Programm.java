@@ -10,7 +10,7 @@ public class Programm {
 		
 		Triangle x,y;
 		Scanner sc = new Scanner(System.in);
-		double p,areaX,areaY;
+		double areaX,areaY;
 		
 		x = new Triangle();
 		y = new Triangle();
@@ -34,14 +34,11 @@ public class Programm {
 		System.out.println("\nOlá, por gentileza informe um número para o lado C: ");
 		y.c = sc.nextDouble();
 		
-		p = (x.a + x.b + x.c) / 2.0;
-		areaX = Math.sqrt(p*(p-x.a)*(p-x.b)*(p-x.c));
-		System.out.printf("O valor da área do Triãngulo x é %.2f: ", areaX);
-
+		areaX = x.area();
+		areaY = y.area();
 		
-		p = (y.a + y.b + y.c) / 2.0;
-		areaY = Math.sqrt(p*(p-y.a)*(p-y.b)*(p-y.c));
-		System.out.printf("O valor da área do Triãngulo x é: %.2f", areaY);
+		System.out.printf("O valor da área do Triãngulo x é %.2f: ", areaX);
+		System.out.printf("\nO valor da área do Triãngulo y é %.2f: ", areaY);
 
 		sc.close();
 	}
