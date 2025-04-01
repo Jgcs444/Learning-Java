@@ -1,0 +1,122 @@
+Introdução a programação Orientada a Objetos
+
+Conceitos:
+
+
+ - Função: É um bloco de código que recebe entradas (ou seja, parâmetros), processa esses dados e retorna um resultado.
+
+    Características:
+        - Pode receber parãmetros;
+        - Pode retornar um valor;
+        - Pode ser chamada de qualquer lugar do código.
+
+=================================================================================================================================
+
+ - Procedimentos: São blocos de códigos que estruturam um programa que executam uma sequência especifica de instruções. Podem ser reutilizados modularizados e entre outros. Exemplo:
+
+    Características:
+        - Podem receber parâmentros;
+        - Não retorna um valor;
+
+Ex:
+
+public class ExemploProcedimento {
+    // Definição do procedimento
+    public static void saudacao(String nome) {
+        System.out.println("Olá, " + nome + "! Seja bem-vindo.");
+    }
+
+    public static void main(String[] args) {
+        // Chamando o procedimento
+        saudacao("Carlos");
+        saudacao("Ana");
+    }
+}
+
+=================================================================================================================================
+
+
+ - Argumentos: São valores passados para um procedimento ou função chamada.
+        Existe diferença entre Parâmetros e Argumentos:
+            - Parâmetro: É a váriavel declarada na definição da função/procedimento;
+            - Argumento: É o valor real passado para essa variável quando o procedimento/ função é chamado.
+
+=================================================================================================================================
+
+ - Métodos: Um método é um comportamento de um objeto dentro de uma classe. Ele pode ser visto como uma função associada a um objeto. Basicamente é uma função que pertence a uma classe e é chamado por um objeto ou diretamente pela classe (se for static). Em linguagens como Java, C# e Python (quando usamos POO), todas as "funções" são chamadas de métodos.;
+
+    Características:
+        - Sempre pertence a uma classe;
+        - Pode ser chamado a partir de um objeto;
+        - Pode ser estático ( Não precisa de Objeto).
+
+Ex:
+
+class Calculadora {
+    public int soma(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.soma(5, 3);
+        System.out.println(resultado); // Saída: 8
+    }
+}
+
+
+Em java, por um método ser uma função, a sintaxe é assim:
+
+[modificador_de_acesso] [modificador_opcional] tipo_de_retorno nome_do_metodo(parâmetros) {
+    // Corpo do método (código que será executado)
+    [return valor]; // (Opcional, apenas se o método não for `void`)
+}
+
+
+    Explicação dos componentes:
+
+    Componente	                        Descrição	                                                             Exemplo
+
+    Modficadores de acesso              Define a visibilidade do método(público, privado, protegido, etc.)       public, private;
+    Modificador opcional                Define as cacacterísticas especiais do método                            static,final;
+    Tipo de retorno                     Tipo de dado que o método retorna ( int, double, String, etc.)           int, double;
+
+=================================================================================================================================
+
+    Instância X Declaração
+
+    - Uma instãncia nada mais é que declarar algo e já passar um valor para isso ( Alocação de memória);
+    - Declara é apenas criar o item, uma váriavel por exemplo, sem passar nada para ela de forma inicial.
+    - É possivel declarar sem intanciar, mas não pode instanciar sem declarar !
+
+=================================================================================================================================
+
+
+    Objetos:Um objeto é uma instância de uma classe;
+    - Ele representa algo do mundo real e contém dados, caracteristicas ( atributos) e comportamentos, ações ( métodos);
+
+    Objetos X Classes:
+
+    - Uma classe é um molde, algo mais amplo e genérico que serve de base para algo mais especifico;
+    - Um objeto é uma cópia desse molde, com mudanças para atender algo mais especifico;
+    - Exemplo:
+            Classe: Carro;
+            Objeto: Camaro SS
+=================================================================================================================================
+
+    Entidades
+
+    - Uma entidade é qualquer coisa com indentidade própria que faz parte do domínio do problema ( Ou seja, do assunto que o sistem a trata). Ele representa algo real ( físico ou conceitual), que possui dados próprios e importância no sistema.
+
+    Exemplos:
+
+    Contexto                      Entidades possiveis
+
+    Sistema báncario              Cliente, funciońario,conta, transação, Agẽncia
+    Escola                        Funcionário, aluno, professor, matéria, turma
+    Loja virtual                  Produto, pedido, cliente, funcionário
+    Aplicativo de geometria       Triãngulo, circulo, quadrado
+
+    Obs: Medidas, área, volume e etc são atributos ou propriedades da figura, não entidades por si só.
