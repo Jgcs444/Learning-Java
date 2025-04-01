@@ -1,0 +1,25 @@
+	package curso_programacao_1;
+	import java.util.Scanner;
+	
+	public class Funcoes {
+	
+		public static void main(String[] args) {
+			
+			Scanner sc = new Scanner(System.in);
+			
+			
+			System.out.println("Por favor, informe um número:");
+			int x = sc.nextInt();
+			int y = CalcularRaizQuadrada(x);
+			
+			System.out.println(y);
+			
+			sc.close();
+			
+		}
+		
+		private static int CalcularRaizQuadrada (int valor) {
+			return  (int) Math.sqrt(valor);
+		}
+	
+	}
