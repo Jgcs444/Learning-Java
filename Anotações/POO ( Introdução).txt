@@ -90,6 +90,9 @@ Em java, por um método ser uma função, a sintaxe é assim:
     - Uma instãncia nada mais é que declarar algo e já passar um valor para isso ( Alocação de memória);
     - Declara é apenas criar o item, uma váriavel por exemplo, sem passar nada para ela de forma inicial.
     - É possivel declarar sem intanciar, mas não pode instanciar sem declarar !
+    - Instanciar nada mais é que apresentar ou usar o exemplo real de algo;
+    - Materializar ou tornar real uma ideia abstrata;
+    - Significa criar um objeto a partir de uma classe, onde a classe é como um molde e ao instanciá-la, é gerado um objeto real nesse molde, ocupando memória e podendo ser utilizado no programa.
 
 =================================================================================================================================
 
@@ -120,3 +123,33 @@ Em java, por um método ser uma função, a sintaxe é assim:
     Aplicativo de geometria       Triãngulo, circulo, quadrado
 
     Obs: Medidas, área, volume e etc são atributos ou propriedades da figura, não entidades por si só.
+
+=================================================================================================================================
+
+    Constructor
+
+    - Um constructor é um "método especial" usado para incializar os atributos do objeto, que possui:
+        - O mesmo nome da classe.
+        - Nenhum tipo de retorno ( nem void);
+        - É chamado com new.
+
+        Exemplo:
+
+        public class Triangle {
+
+        double a, b, c;
+
+        // Isto é um Constructor
+
+        public Triangle() {
+
+        a = 0;
+        b = 0;
+        c = 0;
+
+        }
+
+        }
+
+
+        Triangle t = new Triangle(); ---> E é chamado assim;
