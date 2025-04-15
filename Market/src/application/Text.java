@@ -30,10 +30,10 @@ public class Text {
 		System.out.printf("\nEnter the number of products to be removed in stock: ");
 		return sc.nextInt();
 	}
-	
-	public static void printProductdata (Product p, String label) {
-		System.out.printf("\n%s: %s; R$ %.2f; %d units; Total R$ %.2f", 
-                label, p.name, p.price, p.quantity, p.valor_T());
+
+	public static void printProductdata(Product p, String label) {
+		System.out.printf("\n%s: %s; R$ %.2f; %d units; Total R$ %.2f", label, p.name, p.price, p.quantity,
+				p.totalValueInStock());
 	}
 
 }
