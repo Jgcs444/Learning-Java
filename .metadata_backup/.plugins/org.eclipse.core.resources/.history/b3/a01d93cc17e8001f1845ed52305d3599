@@ -1,0 +1,28 @@
+package Exercicios;
+
+import java.util.Scanner;
+
+public class Exercicio_9 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.println("Enter Three numbers:");
+		
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		
+		if( a>b && a>c) {
+			System.out.println("O maior valor é:"+ a);
+		} else if (b>c) {
+			System.out.println("O maior valor é:"+ b);
+		} else {
+			System.out.println("O maior valor é:"+ c);
+		}
+		
+		sc.close();
+
+	}
+
+}

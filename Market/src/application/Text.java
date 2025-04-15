@@ -5,24 +5,29 @@ import java.util.Scanner;
 import entities.Product;
 
 public class Text {
-	
-	public static Product readFirstData (Scanner sc) {
-		
+
+	public static Product readFirstData(Scanner cs) {
+
 		Product x = new Product();
-		
+
 		System.out.printf("\nEnter product data: \nName: ");
-		x.name = sc.nextLine();
+		x.name = cs.nextLine();
 		System.out.print("Price: ");
-		x.price = sc.nextDouble(); 
+		x.price = cs.nextDouble();
 		System.out.print("Quantity in stock: ");
-		x.quantity = sc.nextInt();
-		
+		x.quantity = cs.nextInt();
+
 		return x;
-		
+
 	}
-	
-	public static int addNumb (Scanner sc) {
+
+	public static int addNumb(Scanner sc) {
 		System.out.printf("\nEnter the number of products to be added in stock: ");
+		return sc.nextInt();
+	}
+
+	public static int delNumb(Scanner sc) {
+		System.out.printf("\nEnter the number of products to be removed in stock: ");
 		return sc.nextInt();
 	}
 

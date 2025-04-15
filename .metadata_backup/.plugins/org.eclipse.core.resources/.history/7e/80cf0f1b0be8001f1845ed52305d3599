@@ -1,0 +1,23 @@
+package curso_programacao_1;
+
+public class Func_Interessantes_Strings {
+
+	public static void main(String[] args) {
+		
+		// Funções para:
+//		- Formatar: toLowerCase(), toUpperCase, trim() ( remover espaços)
+//		- Recortar: substring(inicio), substring(inicio,fim)
+//		- Substituit: Replace(char,char), Replace(string,string)
+//		- Buscar: IndexOf, LasIndexOf
+//		- str.Split("") Separar uma string com base no que for informado
+		
+		String palavra = "abcde ABCDE FGHIJ abc DEFG   -";
+		
+		System.out.printf("%s\n",palavra.toLowerCase());
+		System.out.printf("%s\n",palavra.toUpperCase());
+		System.out.printf("%s\n",palavra.trim());
+		
+
+	}
+
+}

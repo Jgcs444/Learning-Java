@@ -1,0 +1,27 @@
+package Exercicios;
+import java.util.Scanner;
+
+public class Exercicio_8 {
+
+	public static void main(String[] args) {
+		
+		//Ler um número inteiro N e calcular todos os seus divisores.
+		
+		int num,i;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Por favor, informe um número para saber todos os seus divisores: ");
+		num = sc.nextInt();
+		
+		System.out.printf("Os divisores de %-4d são: ",num);
+		
+		for(i=0; num%i == 0; i++) {
+			
+			System.out.println(i);
+		}
+
+		
+		sc.close();
+	}
+
+}
