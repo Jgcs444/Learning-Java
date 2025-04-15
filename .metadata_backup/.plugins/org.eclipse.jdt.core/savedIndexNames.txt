@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+/var/home/bazzite/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
-4071426965.index
-377779377.index
-1865797976.index
