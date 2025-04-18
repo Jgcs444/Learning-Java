@@ -153,3 +153,9 @@ Em java, por um método ser uma função, a sintaxe é assim:
 
 
         Triangle t = new Triangle(); ---> E é chamado assim;
+
+=================================================================================================================================
+
+O que é static em JAVA ?
+
+ - static é um modificador que indica que um atributo ou método pertence a classe, e não a um objeto específico.

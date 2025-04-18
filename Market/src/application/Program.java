@@ -14,7 +14,7 @@ public class Program {
 		Text.printProductdata(x, "Product data: ");
 
 		int newQuantity = Text.addNumb(sc);
-		x.addNewQuantity(newQuantity);
+		x.addProducts(newQuantity);
 		Text.printProductdata(x, "Updated data: ");
 
 		int deleteQuantity = Text.delNumb(sc);

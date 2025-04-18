@@ -36,4 +36,8 @@ public class Text {
 				p.totalValueInStock());
 	}
 
+	// Por que tudo aqui é static ?
+	// 1 - Não são criados objetos da classe Text;
+	// 2 - Os métodos são utilitários - recebem tudop que precisam;
+	
 }
