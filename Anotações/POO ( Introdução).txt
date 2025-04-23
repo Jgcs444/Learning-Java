@@ -159,3 +159,13 @@ Em java, por um método ser uma função, a sintaxe é assim:
 O que é static em JAVA ?
 
  - static é um modificador que indica que um atributo ou método pertence a classe, e não a um objeto específico.
+=================================================================================================================================
+
+Object e toString
+
+- Toda classe em Java é uma subclasse da classe Object, logo os tipos que criamos, por exemplo: carro, user, funcionário são subclasses de Object;
+- Object possui os seguintes métodos:
+  - getClass: Retornar o tipo do objeto
+  - equals : Compara se o objeto é igual ao outro;
+  - hashCode: retorna um código hash do objeto;
+  - toString - converte o objeto para string.
