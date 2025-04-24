@@ -1,5 +1,14 @@
 Introdução a programação Orientada a Objetos
 
+
+Informações soltas:
+
+
+    A palavra reservada final em por exemplo, public static final double PI = 3,14159 quer dizer que essa váriavel é constante, elá não irá mais mudar;
+    Geralmente o padrão de escrita para constantes é todo em letra maiuscula, por isso o PI;
+
+=================================================================================================================================
+
 Conceitos:
 
 
@@ -159,6 +168,14 @@ Em java, por um método ser uma função, a sintaxe é assim:
 O que é static em JAVA ?
 
  - static é um modificador que indica que um atributo ou método pertence a classe, e não a um objeto específico.
+ - São membros que fazem sentido independentemente de objetos. Não precisam de objeto para serem chamados ( basicamente significa que o resultado sempre vai ser o mesmo independete de qualquer objeto ). São chamados a partir do próprio nome da classe;
+ - Aplicações comuns:
+    - Classses utilitárias; Ex: Math.sqrt(double), onde Math não é um objeto e si o nome da classe.
+    - Declarações de constantes;
+ - Uma classe que possui membros estáticos, pode ser uma classe estática também. Esta classe não poderá ser instanciada.
+ - No problema do trinagulo que fizemos, cada triangulo possui a sua área;
+ - Area() é uma operação concernente ao objeto: cada trinagulo possui a sua área.
+ - Já no problema da calculadora, os valores dos cálculos não mudam para calculadoras diferentes, ou seja, são cálculos estáticos. O valor de pi também é estático.
 =================================================================================================================================
 
 Object e toString
@@ -169,3 +186,6 @@ Object e toString
   - equals : Compara se o objeto é igual ao outro;
   - hashCode: retorna um código hash do objeto;
   - toString - converte o objeto para string.
+
+=================================================================================================================================
+
