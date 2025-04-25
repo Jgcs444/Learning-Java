@@ -8,16 +8,16 @@ public class Text {
 
 	public static Product readFirstData(Scanner cs) {
 
-		Product x = new Product();
-
 		System.out.printf("\nEnter product data: \nName: ");
-		x.name = cs.nextLine();
+		String name = cs.nextLine();
 		System.out.print("Price: ");
-		x.price = cs.nextDouble();
+		double price = cs.nextDouble();
 		System.out.print("Quantity in stock: ");
-		x.quantity = cs.nextInt();
+		int quantity = cs.nextInt();
+		
+		Product product = new Product(name, price, quantity);
 
-		return x;
+		return product;
 
 	}
 

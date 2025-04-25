@@ -1,7 +1,7 @@
-Introdução a programação Orientada a Objetos
+INTRODUÇÃO A PROGRAMAÇÃO ORIENTADA A OBJETOS
 
 
-Informações soltas:
+INFORMAÇÕES SOLTAS:
 
 
     A palavra reservada final em por exemplo, public static final double PI = 3,14159 quer dizer que essa váriavel é constante, elá não irá mais mudar;
@@ -9,10 +9,10 @@ Informações soltas:
 
 =================================================================================================================================
 
-Conceitos:
+CONCEITOS:
 
 
- - Função: É um bloco de código que recebe entradas (ou seja, parâmetros), processa esses dados e retorna um resultado.
+ - FUNÇÃO: É um bloco de código que recebe entradas (ou seja, parâmetros), processa esses dados e retorna um resultado.
 
     Características:
         - Pode receber parãmetros;
@@ -21,7 +21,7 @@ Conceitos:
 
 =================================================================================================================================
 
- - Procedimentos: São blocos de códigos que estruturam um programa que executam uma sequência especifica de instruções. Podem ser reutilizados modularizados e entre outros. Exemplo:
+ - PROCEDIMENTOS: São blocos de códigos que estruturam um programa que executam uma sequência especifica de instruções. Podem ser reutilizados modularizados e entre outros. Exemplo:
 
     Características:
         - Podem receber parâmentros;
@@ -45,14 +45,14 @@ public class ExemploProcedimento {
 =================================================================================================================================
 
 
- - Argumentos: São valores passados para um procedimento ou função chamada.
+ - ARGUMENTOS: São valores passados para um procedimento ou função chamada.
         Existe diferença entre Parâmetros e Argumentos:
             - Parâmetro: É a váriavel declarada na definição da função/procedimento;
             - Argumento: É o valor real passado para essa variável quando o procedimento/ função é chamado.
 
 =================================================================================================================================
 
- - Métodos: Um método é um comportamento de um objeto dentro de uma classe. Ele pode ser visto como uma função associada a um objeto. Basicamente é uma função que pertence a uma classe e é chamado por um objeto ou diretamente pela classe (se for static). Em linguagens como Java, C# e Python (quando usamos POO), todas as "funções" são chamadas de métodos.;
+ - MÉTODOS: Um método é um comportamento de um objeto dentro de uma classe. Ele pode ser visto como uma função associada a um objeto. Basicamente é uma função que pertence a uma classe e é chamado por um objeto ou diretamente pela classe (se for static). Em linguagens como Java, C# e Python (quando usamos POO), todas as "funções" são chamadas de métodos.;
 
     Características:
         - Sempre pertence a uma classe;
@@ -94,7 +94,7 @@ Em java, por um método ser uma função, a sintaxe é assim:
 
 =================================================================================================================================
 
-    Instância X Declaração
+    INSTÂNCIA X DECLARAÇÃO
 
     - Uma instãncia nada mais é que declarar algo e já passar um valor para isso ( Alocação de memória);
     - Declara é apenas criar o item, uma váriavel por exemplo, sem passar nada para ela de forma inicial.
@@ -106,7 +106,9 @@ Em java, por um método ser uma função, a sintaxe é assim:
 =================================================================================================================================
 
 
-    Objetos:Um objeto é uma instância de uma classe;
+    OBJETOS
+	
+	Um objeto é uma instância de uma classe;
     - Ele representa algo do mundo real e contém dados, caracteristicas ( atributos) e comportamentos, ações ( métodos);
 
     Objetos X Classes:
@@ -118,7 +120,7 @@ Em java, por um método ser uma função, a sintaxe é assim:
             Objeto: Camaro SS
 =================================================================================================================================
 
-    Entidades
+    ENTIDADES
 
     - Uma entidade é qualquer coisa com indentidade própria que faz parte do domínio do problema ( Ou seja, do assunto que o sistem a trata). Ele representa algo real ( físico ou conceitual), que possui dados próprios e importância no sistema.
 
@@ -135,7 +137,7 @@ Em java, por um método ser uma função, a sintaxe é assim:
 
 =================================================================================================================================
 
-    Constructor
+    CONSTRUCTOR
 
     - Um constructor é um "método especial" usado para incializar os atributos do objeto, que possui:
         - O mesmo nome da classe.
@@ -162,10 +164,38 @@ Em java, por um método ser uma função, a sintaxe é assim:
 
 
         Triangle t = new Triangle(); ---> E é chamado assim;
+		
+		- É uma operação especial da classe que executa no momento da instanciação do objeto
+		- Usos comuns:
+			- Iniciar valores dos atributos;
+			- Permitir ou obrigar que o objeto receba dados / dependências no momento de sua instanciação ( Injeção de dependência);
+		
+		- Se um construtor customizado não for especificado, a classe disponibiliza o construtor padrão:
+			Product p = new Product();
+		
+		- É possível especificar mais de um construtor na mesma classe ( sobrecarga).
+		
+		PROPOSTA DE MELHORIA PARA O PROBLEMA DO MERCADO:
+		
+		Quando executamos o comando abaixo, instanciamos um produto "product" com seus atributos "vazios":
+		
+		Product product = new Product();   -------------------------------> product ------> null     0.0      0 
+		                                                                                    name     price    quantity
+																							
+		- Entretanto, faz sentido um produto que não tem nome ? Faz sentido um produto que não tem preço ?
+		- Com o intuito de evitar a existência de produtos sem nome e sem preço, é possível fazer com que seja "obrigatória" a inciação desses valores ?
+		- O uso de construtores permite que o objeto seja criado já com seus dados definidos, evitando o uso temporário de valores padrão ( com o null, 0, false), e deixando o código mais eficiente e seguro, tanto em 
+		termos de lógica quanto de organização;
+		
+		ISSO EVITA:
+		
+		- Objetos incompletos qu eprecisam ser preenchidos "depois";
+		- Erros de lógica por usar campos que ainda estão nulos ou com zero;
+		- Passos desnecessários na memória ( como criar o objeto e depois setar tudo manualmente).
 
 =================================================================================================================================
 
-O que é static em JAVA ?
+O QUE É STATIC EM JAVA ?
 
  - static é um modificador que indica que um atributo ou método pertence a classe, e não a um objeto específico.
  - São membros que fazem sentido independentemente de objetos. Não precisam de objeto para serem chamados ( basicamente significa que o resultado sempre vai ser o mesmo independete de qualquer objeto ). São chamados a partir do próprio nome da classe;
@@ -178,7 +208,7 @@ O que é static em JAVA ?
  - Já no problema da calculadora, os valores dos cálculos não mudam para calculadoras diferentes, ou seja, são cálculos estáticos. O valor de pi também é estático.
 =================================================================================================================================
 
-Object e toString
+OBJECT E TOSTRING
 
 - Toda classe em Java é uma subclasse da classe Object, logo os tipos que criamos, por exemplo: carro, user, funcionário são subclasses de Object;
 - Object possui os seguintes métodos:

@@ -13,12 +13,13 @@ public class Application {
 		Scanner sc = new Scanner(System.in);
 		double percentage;
 
-		Text.printInfo(amorDaMinhaVida);
+		System.out.println(amorDaMinhaVida.toString());
 		percentage = Text.questionUser(sc);
 
 		amorDaMinhaVida.increaseSalary(percentage);
 
-		Text.printInfo(amorDaMinhaVida);
+		System.out.println(amorDaMinhaVida.toString());
+		
 
 	}
 

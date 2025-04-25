@@ -5,6 +5,13 @@ public class Product {
 	public String name;
 	public double price;
 	public int quantity;
+	
+	public Product(String name, double price, int quantity) {
+		// Constructor, executa no momento de instanciação do objeto.
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
 
 	public double totalValueInStock() {
 		return price * quantity;

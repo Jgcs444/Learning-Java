@@ -13,5 +13,12 @@ public class Worker {
 	public void increaseSalary(double percentage) {
 		salary += (salary * percentage) / 100.0;
 	}
+	
+	public String toString () {
+		return "\nEmployee: "
+				+ String.format("%s", this.name)
+				+ ", $: "
+				+ String.format("%.2f", this.netSalary());
+	}
 
 }
