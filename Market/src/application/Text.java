@@ -7,15 +7,19 @@ import entities.Product;
 public class Text {
 
 	public static Product readFirstData(Scanner cs) {
+		
+		String name;
+		double price;
+		int quantity;
 
 		System.out.printf("\nEnter product data: \nName: ");
-		String name = cs.nextLine();
+		name = cs.nextLine();
 		System.out.print("Price: ");
-		double price = cs.nextDouble();
+		price = cs.nextDouble();
 		System.out.print("Quantity in stock: ");
-		int quantity = cs.nextInt();
+		quantity = cs.nextInt();
 		
-		Product product = new Product(name, price, quantity);
+		Product product = new Product(name, price);
 
 		return product;
 

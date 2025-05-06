@@ -185,11 +185,11 @@ Em java, por um método ser uma função, a sintaxe é assim:
 		- Entretanto, faz sentido um produto que não tem nome ? Faz sentido um produto que não tem preço ?
 		- Com o intuito de evitar a existência de produtos sem nome e sem preço, é possível fazer com que seja "obrigatória" a inciação desses valores ?
 		- O uso de construtores permite que o objeto seja criado já com seus dados definidos, evitando o uso temporário de valores padrão ( com o null, 0, false), e deixando o código mais eficiente e seguro, tanto em 
-		termos de lógica quanto de organização;
+		termos de lógica quanto de organização.
 		
 		ISSO EVITA:
 		
-		- Objetos incompletos qu eprecisam ser preenchidos "depois";
+		- Objetos incompletos que eprecisam ser preenchidos "depois";
 		- Erros de lógica por usar campos que ainda estão nulos ou com zero;
 		- Passos desnecessários na memória ( como criar o objeto e depois setar tudo manualmente).
 
@@ -219,3 +219,107 @@ OBJECT E TOSTRING
 
 =================================================================================================================================
 
+SOBRECARGA ( Overloading)
+
+	-  É um recurso que uma classe possui de oferecer mais de uma operação com o mesmo nome, porém com diferentes listas de parâmetros.
+	-  É uma forma de oferecer várias versões de um mesmo comportamento, adaptado para diferentes situações;
+	
+	Regras para sobrecarga :
+	1. O nome do método deve ser o mesmo;
+	2. A assinatura dos parâmetros deve ser diferente ( número, tipo ou ordem);
+	3. O tipo de retorno não conta para diferenciar sobrecarga.
+	
+	Exemplo:
+	
+	public class Calculadora {
+	
+	public int somar ( int a, int b) {
+		return a + b;
+		}
+	public double somar (double a , double b) {
+		return a + b;
+		}
+	public int somar (int a , int b, int c) {
+		return a + b + c;
+		}
+		
+E POR QUE ISSO É ÚTIL ?
+	
+	Sobrecarga permite:
+	1. Escrever o código mais limpo, mais intuitivo;
+	2. Evitar criar métodos com nomes diferentes para mesma ação;
+	3. Adaptar métodos a diferentes tipos de entrada.
+		
+
+IMPORTANTE: SOBRECARGA ≠ SOBRESCRITA:
+	
+	Sobrecarga = Mesmo nome, assinaturas diferentes na mesma classe;
+	Sobrescrita ( @Override) = Mudar o comportamento de um método herdado de outra classe.
+	
+E SE MUDAR O TIPO DE RETORNO ?
+
+	public int calcular ( int a, int b) {...}
+	public double calcular (int a, int b){...}
+	
+	- Isso não é sobrecarga válida, por que a assinatura dos parâmetros é igual; 
+	- O java não consegue decidir qual método chamar apenas por meio do retorno;
+	- Para que a sobrecarga funcione, a diferença deve estar nos parâmentros, nunca no retorno.
+	
+CURIOSIDADE
+
+	- Construtores também pode ser sobrecarregados;
+	- É possível também incluir um construtor padrão.
+	
+=================================================================================================================================
+
+ENCAPSULAMENTO  
+
+	- É um princípio que consistes em esconder detalhes de implementação de uma classe, expondo apenas operações seguras
+	e que mantenham os objetos em um estado consistente;
+	- Regra de ouro: O objeto deve sempre estar em um estado consistente e a própria classe deve garantir isso.
+
+COMO FUNCIONA NA PRÁTICA:
+	
+	- 1. Atributos da classe são geralmente privados ( modificador de acesso private);
+	- 2. Você fornece métodos públicos de acesso:
+		- getters -> para ler valores;
+		- setters -> para alternar valores ( com validações, se necessário).
+		- Padrão JavaBeans: https://download.oracle.com/otndocs/jcp/7224-javabeans-1.01-fr-spec-oth-JSpec/
+		
+	ESTRUTUA DO JAVABEANS:
+	
+	1. Classe pública (public) 
+	2. Construtor público sem argumentos;
+	3. Atributos private ( encapsulamentos)
+	4. Métodos get e set públicos;
+	5. Pode implementar Serializable a interface ( opcional)
+	6. Getters/Setters simples, sem lógica pesada.
+	
+	NOMEAÇÃO DOS MÉTODOS:
+	
+	Para atributo nome: 
+	
+	- Getter:
+	
+	public String getNome();
+	
+	- Setter:
+	
+	public void setNome(String nome);
+	
+	Para atributos booleanos:
+	
+	- Getter:
+	
+	public boolean isAtivo();
+	
+	- Setter:
+	
+	public void setAtivo(boolean ativo);
+		
+POR QUE USAR ? 
+
+	 ✅ Evita modificações indesejadas em atributos sensíveis;
+	 ✅ Permite validações e regras ao alterar os dados;
+	 ✅ Separa o "Como funciona por dentro"  do "como é usado por fora"
+	 ✅ Torna seu código mais fácil de manter e testar;
