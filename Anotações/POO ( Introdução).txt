@@ -1,4 +1,14 @@
-INTRODUÇÃO A PROGRAMAÇÃO ORIENTADA A OBJETOS
+
+																							  ██╗ █████╗ ██╗   ██╗ █████╗ 
+																							  ██║██╔══██╗╚██╗ ██╔╝██╔══██╗
+																							  ██║███████║ ╚████╔╝ ███████║
+																						██   ██║██╔══██║  ╚██╔╝  ██╔══██║
+																						╚█████╔╝██║  ██║   ██║   ██║  ██║
+																						 ╚════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝
+
+
+																 I N T R O D U Ç Ã O   À   P R O G R A M A Ç Ã O   O R I E N T A D A   A   O B J E T O S
+
 
 
 INFORMAÇÕES SOLTAS:
@@ -216,6 +226,8 @@ OBJECT E TOSTRING
   - equals : Compara se o objeto é igual ao outro;
   - hashCode: retorna um código hash do objeto;
   - toString - converte o objeto para string.
+  
+  Além desses existem outros, os que citei acima são os mais comuns a serem usados no dia a dia por assim dizer.
 
 =================================================================================================================================
 
@@ -253,8 +265,8 @@ E POR QUE ISSO É ÚTIL ?
 
 IMPORTANTE: SOBRECARGA ≠ SOBRESCRITA:
 	
-	Sobrecarga = Mesmo nome, assinaturas diferentes na mesma classe;
-	Sobrescrita ( @Override) = Mudar o comportamento de um método herdado de outra classe.
+	- Sobrecarga (Overload) = Mesmo nome, assinaturas diferentes na mesma classe; O que muda ? Apenas a lista de parâmetros. Quando usar ? Quando quiser várias formas de fazer a mesma operação;
+	- Sobrescrita ( @Override) = Mudar o comportamento de um método herdado de outra classe. O que muda ? O comportamento do método. Quando usar ? Quando uma subclasse quiser personalizar ou modificar o comportamento herdado;
 	
 E SE MUDAR O TIPO DE RETORNO ?
 
@@ -276,11 +288,18 @@ ENCAPSULAMENTO
 
 	- É um princípio que consistes em esconder detalhes de implementação de uma classe, expondo apenas operações seguras
 	e que mantenham os objetos em um estado consistente;
-	- Regra de ouro: O objeto deve sempre estar em um estado consistente e a própria classe deve garantir isso.
+	- Regra de ouro: O objeto deve sempre estar em um estado consistente e a própria classe deve garantir isso. Isso significa que os dados de um objeto nunca devem ficar errados, incompletos ou em conflito entre si
+	, no caso acesso direto aos atributos, atualização em lugares diferentes sem controle. Isso deixa o estado do objeto inconsitente, por que não há controle sobre o que pode ou não acontecer. Ou seja:
+		- Um produto não pode ter o preço negativo;
+		- Um cliente não pode ter o cpf vazio;
+		- Um funcionário não pode ter o salário zero ( dependendo da regra de negócio).
+	- Estado consciente = dados válidos, lógicos e coesos.
+	- O que significa "A própria classe deve garantir isso" ?
+		- A idéia é que ninguém fora da classe pode alterar os dados diretamente e de qualquer jeito. A classe é responsável por controlar como os atributos podem ser modficados.
 
 COMO FUNCIONA NA PRÁTICA:
 	
-	- 1. Atributos da classe são geralmente privados ( modificador de acesso private);
+	- 1. Um objeto NÃO deve expor nenhum atributo ( modificador de acesso private);
 	- 2. Você fornece métodos públicos de acesso:
 		- getters -> para ler valores;
 		- setters -> para alternar valores ( com validações, se necessário).
@@ -299,21 +318,21 @@ COMO FUNCIONA NA PRÁTICA:
 	
 	Para atributo nome: 
 	
-	- Getter:
+	- ✅ Getter:
 	
 	public String getNome();
 	
-	- Setter:
+	- ✅ Setter:
 	
 	public void setNome(String nome);
 	
 	Para atributos booleanos:
 	
-	- Getter:
+	- ✅ Getter:
 	
 	public boolean isAtivo();
 	
-	- Setter:
+	- ✅ Setter:
 	
 	public void setAtivo(boolean ativo);
 		
@@ -323,3 +342,26 @@ POR QUE USAR ?
 	 ✅ Permite validações e regras ao alterar os dados;
 	 ✅ Separa o "Como funciona por dentro"  do "como é usado por fora"
 	 ✅ Torna seu código mais fácil de manter e testar;
+	 
+	 Exemplo:
+	 
+	 private String name;
+	 private double price;
+	 
+	 public String getName() {
+		return name;
+	 }
+	 
+	 public void setName( String name) {
+		this.name = name;
+	 }
+	 
+	 public double getPrice () {
+		return price;
+		}
+	
+	public double setPrice ( double price) {
+		this.price = price;
+		}
+		
+=================================================================================================================================

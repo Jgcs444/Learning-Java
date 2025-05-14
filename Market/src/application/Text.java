@@ -19,7 +19,7 @@ public class Text {
 		System.out.print("Quantity in stock: ");
 		quantity = cs.nextInt();
 		
-		Product product = new Product(name, price);
+		Product product = new Product(name, price,0);
 
 		return product;
 

@@ -13,6 +13,8 @@ public class Product {
 		this.quantity = quantity;
 	}
 	
+	// Proposta de melhoria apenas para fins de estudo. 
+	// Aprendendo sobre sobrecarga.
 	public Product(String name, double price) {
 		// Constructor, executa no momento de instanciação do objeto.
 		this.name = name;
