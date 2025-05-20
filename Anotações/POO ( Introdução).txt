@@ -340,28 +340,99 @@ POR QUE USAR ?
 
 	 ✅ Evita modificações indesejadas em atributos sensíveis;
 	 ✅ Permite validações e regras ao alterar os dados;
-	 ✅ Separa o "Como funciona por dentro"  do "como é usado por fora"
+	 ✅ Separa o "Como funciona por dentro"  do "como é usado por fora";
 	 ✅ Torna seu código mais fácil de manter e testar;
 	 
-	 Exemplo:
+	  - Se você quiser modificar diretamente o valor de um atributo de fora da classe, e não há nenhuma lógica
+	 envolvida nessa alteração, aí sim você pode ( ou deve) usar um setter.
 	 
-	 private String name;
-	 private double price;
+	 👓 EXEMPLO:
 	 
-	 public String getName() {
-		return name;
-	 }
-	 
-	 public void setName( String name) {
-		this.name = name;
-	 }
-	 
-	 public double getPrice () {
-		return price;
-		}
-	
-	public double setPrice ( double price) {
-		this.price = price;
+	 public class usuario () {
+		private String nome;
+		
+		public String getNome() {
+			return nome;
 		}
 		
+		public void setNome ( String nome) {
+			this.nome = nome;
+		}
+	 }
+	 
+	✔ USO:
+	 
+	 Usuario u = new Usuario();
+	 u.setNome = ("Maria Carolina");
+	 
+	 - Se tiver essa mesma variável, que passa por método e segue algum tipo de regra, aí eu não preciso 
+	 de um setter.
+	 
+	 👓 EXEMPLO: 
+	 
+	 public class Produto {
+		private int estoque;
+		
+		public int getEstoque() {
+			return this.estoque;
+		}
+		
+		public void adicionarEstoque ( int qtd) {
+			if ( qtd >0) {
+				this.estoque += qtd;
+			}
+		}
+		
+		public void removerEstoque ( int qtd) {
+			if ( qtd > 0 && qtd <= estoque) {
+			this.estoque -= qtd;
+		}
+		
+		}
+	}
+	 	
+		
+GERANDO AUTOMATICAMENTE GETTERS AND SETTERS ( ECLIPSE )
+
+	- Basta clicar com o botão direito do mouse na classe, então ir em SOURCE e em Getters and Setters.
+		
 =================================================================================================================================
+
+MODIFICADORES DE ACESSO 
+
+	- São modificadores que controla a visibilidade de elementos do código e ajudam a aplicar encapsultamento
+	, segurança e organização.
+	
+	✅ Os 4 modificadores de acesso do JAVA:
+	
+		- public:
+			- Acessibilidade por qualquer classe de qualquer pacote; ( ao menos que ele resida em um módulo diferente que não exporte o pacote onde ele está)
+			- Pode ser usado em classes, atributos, métodos, construtores;
+		
+		- protected:
+			- O membro só pode ser acessado no mesmo pacote, bem como em subclasses de pacotes diferentes;
+			- Pode ser usado em atributos, métodos, construtores.
+			
+		- sem nada ( package-private):
+			- Acessível somente dentro do mesmo pacote;
+			- Atributos, métodos, classes. construtores.
+			
+		- private:
+			- Acessível somente dentro da própria classe;
+			- Atributos, métodos, construtorers.
+			
+	👓 QUANDO USAR CADA UM ?
+	
+		- Private: Deseja-se proteger os dados internos (padrão para atributos)
+		- public : Deseja-se liberar acesso universal ( padrão para métodos de interface ou main)
+		- protected: Deseja-se que subclasses possam acessar, mas não qualquer classe.
+		- sem nada: O elemento só deve ser vísivel no mesmo pacote.
+	
+	✍  DICA DE OURO 
+	
+		- A melhor prática é deixar tudo private por padrão, e apenas aumentar a visibilidade quando realmente 
+		for necessário.
+		
+	🎃 DIGRAMA PARA DEIXAR MAIS ESPLICITO O CONCEITO 
+	
+	https://stackoverflow.com/questions/215497/what-is-the-difference-between-public-protected-package-private-and-private-in
